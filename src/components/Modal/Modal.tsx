@@ -54,7 +54,10 @@ const Modal: React.FC<Props> = ({
           onClick={(event) => event.stopPropagation()}
         >
           <div className={'modal-content'}>
-            <div className={'modal-header'}>{title}</div>
+            <div className={'modal-header justify-content-between'}>
+              {title}
+              <i className={'bi bi-x-lg'} onClick={onClose}></i>
+            </div>
             <div className="modal-body">{children}</div>
             {modalFooterElements()}
           </div>
