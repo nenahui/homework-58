@@ -3,7 +3,7 @@ import React from 'react';
 interface ModalButtons {
   type: string;
   label: string;
-  onClick?: () => void;
+  onClick: () => void;
 }
 
 interface Props extends React.PropsWithChildren {
@@ -56,7 +56,11 @@ const Modal: React.FC<Props> = ({
           <div className={'modal-content'}>
             <div className={'modal-header justify-content-between'}>
               {title}
-              <i className={'bi bi-x-lg'} onClick={onClose}></i>
+              <i
+                className={'bi bi-x-lg'}
+                onClick={onClose}
+                style={{ cursor: 'pointer' }}
+              ></i>
             </div>
             <div className="modal-body">{children}</div>
             {modalFooterElements()}
